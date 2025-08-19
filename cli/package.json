@@ -1,0 +1,21 @@
+{
+  "name": "@yourorg/ai-gen",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "bin": {
+    "ai-gen": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "minimatch": "^9.0.3",
+    "simple-git": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.6.3"
+  }
+}
