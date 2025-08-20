@@ -66,7 +66,7 @@ async function callLLM(
   const sys = SYSTEM_PROMPT.replace("{{FILE_HEADER}}", cfg.fileHeader);
   const usr = userPrompt(componentPath, source, "UI");
   if (cfg.llm.provider === "anthropic") {
-    const {chatAnthropic} = await import("./providers/antrophic");
+    const {chatAnthropic} = await import("./providers/antrophic.js");
     const text = await chatAnthropic({
       system: sys,
       user: usr,
@@ -75,7 +75,7 @@ async function callLLM(
     });
     return JSON.parse(text);
   } else {
-    const {chatOpenAI} = await import("./providers/openai");
+    const {chatOpenAI} = await import("./providers/openai.js");
     const text = await chatOpenAI({
       system: sys,
       user: usr,
